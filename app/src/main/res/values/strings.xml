@@ -21,5 +21,8 @@
     <string name="profile">Профиль</string>
     <string name="entering">Вход</string>
     <string name="registration">Регистрация</string>
-    <string name="exit_account">Выйти из аккаунта</string>
+    <string name="exit_account"><u>Выйти из аккаунта</u></string>
+    <string name="enter">Вход</string>
+    <string name="no_acc">Нет аккаунта?</string>
+    <string name="to_register"><u>Зарегистрироваться</u></string>
 </resources>

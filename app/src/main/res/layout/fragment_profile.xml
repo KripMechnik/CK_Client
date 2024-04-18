@@ -5,13 +5,14 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/screen_bg"
-        tools:context=".ui.profile.ProfileFragment" tools:layout_editor_absoluteY="252dp"
-        tools:layout_editor_absoluteX="0dp">
+        android:background="@drawable/background"
+        tools:context=".ui.profile.ProfileFragment"
+        >
 
 
     <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
 
@@ -40,73 +41,57 @@
     </com.google.android.material.appbar.MaterialToolbar>
 
 
-
-
-    <com.google.android.material.textview.MaterialTextView
-            android:text="Номер телефона"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:background="@drawable/edit_text_bg"
-            android:textSize="20sp"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_height="60dp" android:id="@+id/tvNumber"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/tvLogin"
-            android:layout_marginTop="@dimen/margin_for_profile"/>
     <com.google.android.material.textview.MaterialTextView
             android:text="Логин"
             android:textColor="@color/white"
             android:layout_width="match_parent"
-            android:background="@drawable/edit_text_bg"
+            android:background="@drawable/bg_panel_profile"
             android:textSize="20sp"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="@dimen/margin_for_profile"
-            android:layout_height="60dp" android:id="@+id/tvLogin"
+            android:gravity="top"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+
+            android:layout_marginTop="8dp"
+            android:layout_height="80dp" android:id="@+id/tvLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toBottomOf="@+id/profileImage"/>
     <com.google.android.material.textview.MaterialTextView
-            android:text="Электронная почта"
-            android:layout_width="match_parent"
-            android:background="@drawable/edit_text_bg"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_height="60dp" android:id="@+id/tvEmail"
-            app:layout_constraintTop_toBottomOf="@+id/tvNumber" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/margin_for_profile" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"/>
-    <ImageView
-            android:layout_width="262dp"
-            android:layout_height="261dp" tools:src="@tools:sample/avatars" android:id="@+id/profileImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            tools:srcCompat="@android:drawable/ic_dialog_info" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="72dp"/>
-    <com.google.android.material.textview.MaterialTextView
             android:text="@string/exit_account"
             android:layout_width="match_parent"
-            android:background="@drawable/edit_text_bg"
+            android:background="@drawable/bg_panel_profile"
             android:textSize="20sp"
+            android:textColor="@color/text_blue"
+            android:gravity="top"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+
+            android:layout_height="80dp" android:id="@+id/tvExit"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumber" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"/>
+    <com.google.android.material.textview.MaterialTextView
+            android:text="Номер телефона"
             android:textColor="@color/white"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_height="60dp" android:id="@+id/tvExit"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmail" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/margin_for_profile" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            android:layout_width="match_parent"
+            android:background="@drawable/bg_panel_profile"
+            android:textSize="20sp"
+            android:gravity="top"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+
+            android:layout_height="80dp" android:id="@+id/tvNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin"
+            android:layout_marginTop="8dp"/>
+    <ImageView
+            android:layout_width="333dp"
+            android:layout_height="332dp" android:id="@+id/profileImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/profile_img"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="92dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

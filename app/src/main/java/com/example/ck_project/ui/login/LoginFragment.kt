@@ -35,7 +35,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val loginButton = binding.loginButton
-        val registerButton = binding.registerButton
+        val registerText = binding.tvToRegister
         val etLogin = binding.etLogin
         val etPassword = binding.etPassword
 
@@ -50,7 +50,7 @@ class LoginFragment : Fragment() {
             }
         }
 
-        registerButton.setOnClickListener{
+        registerText.setOnClickListener{
             findNavController().navigate(R.id.action_navigation_login_to_navigation_register)
         }
     }

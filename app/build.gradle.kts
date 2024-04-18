@@ -48,6 +48,9 @@ dependencies {
     implementation("androidx.annotation:annotation:1.6.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     testImplementation("junit:junit:4.13.2")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
