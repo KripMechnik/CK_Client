@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools">
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="20dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/item_background"
+                android:padding="16dp">
+
+            <ImageView
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp"
+                    android:id="@+id/item_image"
+                    tools:src = "@tools:sample/avatars"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#CC5622"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_title"
+                    android:layout_marginTop="8dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    tools:text = "Название"/>
+
+            <TableRow android:layout_width="match_parent"
+                      android:layout_marginTop="12dp"
+                      android:gravity="center"
+                      android:layout_height="wrap_content">
+
+                <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_price"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        tools:text = "Цена"/>
+
+                <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/add_button"/>
+
+            </TableRow>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

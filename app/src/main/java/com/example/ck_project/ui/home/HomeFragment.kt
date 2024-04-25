@@ -1,38 +1,50 @@
 package com.example.ck_project.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.ck_project.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val recycler = binding.productsRecycler
+        val adapter = ProductsRecyclerAdapter()
+
+        recycler.adapter = adapter
+
+
+        viewModel.stateLiveData.observe(viewLifecycleOwner, Observer { state ->
+            val isSuccess = !state.isLoading && state.errorMessage == null && state.items != null
+            if (isSuccess) {
+                adapter.updateData(state.items!!)
+            } else {
+                state.errorMessage?.let { Log.e("RRR", it) }
+            }
+
+        })
     }
 
     override fun onDestroyView() {
