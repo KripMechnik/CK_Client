@@ -1,5 +1,12 @@
 package com.example.ck_project.domain
 
-class GetUserUseCase {
+import com.example.ck_project.domain.entity.FullItemEntity
+import com.example.ck_project.domain.entity.Status
+import com.example.ck_project.domain.entity.UserEntity
+import java.util.function.Consumer
 
+class GetUserUseCase(private val repo: UserRepository) {
+    fun execute(token: String, callback: Consumer<Status<UserEntity>>) {
+        repo.getUser(token, callback)
+    }
 }
