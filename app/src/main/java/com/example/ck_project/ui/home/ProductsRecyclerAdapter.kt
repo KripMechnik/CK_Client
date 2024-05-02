@@ -1,13 +1,15 @@
 package com.example.ck_project.ui.home
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ck_project.databinding.ProductItemBinding
 import com.example.ck_project.domain.entity.FullItemEntity
+import com.example.ck_project.ui.cart.CartViewModel
 
-class ProductsRecyclerAdapter : RecyclerView.Adapter<ProductsRecyclerAdapter.ProductViewHolder>() {
+class ProductsRecyclerAdapter(val cartViewModel: CartViewModel) : RecyclerView.Adapter<ProductsRecyclerAdapter.ProductViewHolder>() {
 
     val data = mutableListOf<FullItemEntity>()
 
@@ -34,7 +36,11 @@ class ProductsRecyclerAdapter : RecyclerView.Adapter<ProductsRecyclerAdapter.Pro
     }
 
     override fun onBindViewHolder(p0: ProductViewHolder, p1: Int) {
-        p0.bind(data[p1]!!)
+        p0.bind(data[p1])
+        val addBtn = p0.binding.addToCart
+        addBtn.setOnClickListener {
+            cartViewModel.addItem(FullItemEntity(data[p1].id, data[p1].name, data[p1].image, data[p1].price))
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

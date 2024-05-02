@@ -12,13 +12,15 @@
 
     <fragment
             android:id="@+id/navigation_dashboard"
-            android:name="com.example.ck_project.ui.dashboard.DashboardFragment"
-            tools:layout="@layout/fragment_dashboard"/>
+            android:name="com.example.ck_project.ui.cart.CartFragment"
+            tools:layout="@layout/fragment_cart"/>
 
     <fragment
             android:id="@+id/navigation_profile"
             android:name="com.example.ck_project.ui.profile.ProfileFragment"
-            tools:layout="@layout/fragment_profile"/>
+            tools:layout="@layout/fragment_profile">
+        <action android:id="@+id/action_navigation_profile_to_navigation_login" app:destination="@id/navigation_login"/>
+    </fragment>
     <fragment android:id="@+id/navigation_register" android:name="com.example.ck_project.ui.register.RegisterFragment"
               android:label="RegisterFragment">
         <action android:id="@+id/action_navigation_register_to_navigation_profile"

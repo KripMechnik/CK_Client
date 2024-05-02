@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment">
+        android:background="@drawable/background"
+        tools:context=".ui.cart.CartFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
@@ -30,30 +31,46 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="@string/main"
+                    android:text="@string/cart"
                     android:background="@drawable/text_view_background"
                     android:textColor="?attr/colorOnPrimary"
                     android:textSize="24sp"
                     android:id="@+id/tvProfile"/>
 
-            <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/shopping_cart"
-                    android:backgroundTint="#00FFFFFF"/>
-
         </LinearLayout>
 
     </com.google.android.material.appbar.MaterialToolbar>
-
-
+    <TextView
+            android:text="@string/chosen_products"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbar2" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="16dp"/>
     <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cart_recycler"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:id="@+id/products_recycler"
-            android:layout_marginBottom="55dp"
-            android:layout_marginTop="55dp"
-            android:layout_gravity="top"/>
-</FrameLayout>
+            app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <com.google.android.material.button.MaterialButton
+            android:background="@drawable/button_bg"
+            android:gravity="top|center"
+            android:paddingTop="3dp"
+            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:text="@string/make_an_order"
+            android:visibility="gone"
+            android:layout_width="290dp"
+            android:layout_height="77dp" android:id="@+id/order_button"
+            app:layout_constraintTop_toBottomOf="@+id/cart_recycler" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

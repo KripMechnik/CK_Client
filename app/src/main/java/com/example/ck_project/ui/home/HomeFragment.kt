@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.ck_project.databinding.FragmentHomeBinding
+import com.example.ck_project.ui.cart.CartViewModel
 
 class HomeFragment : Fragment() {
 
@@ -16,13 +17,15 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: HomeViewModel
+    private lateinit var cartViewModel: CartViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
+        cartViewModel = ViewModelProvider(requireActivity())[CartViewModel::class.java]
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
@@ -31,7 +34,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recycler = binding.productsRecycler
-        val adapter = ProductsRecyclerAdapter()
+        val adapter = ProductsRecyclerAdapter(cartViewModel)
 
         recycler.adapter = adapter
 

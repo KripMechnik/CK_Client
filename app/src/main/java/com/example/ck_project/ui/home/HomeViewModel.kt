@@ -11,7 +11,7 @@ import com.example.ck_project.domain.entity.Status
 
 class HomeViewModel : ViewModel() {
 
-    val  mutableStateLiveData: MutableLiveData<State> = MutableLiveData()
+    val mutableStateLiveData: MutableLiveData<State> = MutableLiveData()
 
     val stateLiveData: LiveData<State> = mutableStateLiveData
 

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">CK_Project</string>
     <string name="title_home">Меню</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Профиль</string>
+    <string name="title_cart">Корзина</string>
+    <string name="title_profile">Профиль</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -19,10 +19,15 @@
     <string name="login">Логин</string>
     <string name="toEnter">Войти</string>
     <string name="profile">Профиль</string>
+    <string name="main">Главная</string>
+    <string name="cart">Корзина</string>
     <string name="entering">Вход</string>
     <string name="registration">Регистрация</string>
     <string name="exit_account"><u>Выйти из аккаунта</u></string>
     <string name="enter">Вход</string>
     <string name="no_acc">Нет аккаунта?</string>
     <string name="to_register"><u>Зарегистрироваться</u></string>
+    <string name="chosen_products">Ниже представлены выбранные вами товары</string>
+    <string name="make_an_order">Сделать заказ</string>
+    <string name="adress">Адрес</string>
 </resources>

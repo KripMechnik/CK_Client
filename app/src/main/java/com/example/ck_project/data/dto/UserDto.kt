@@ -6,8 +6,8 @@ class UserDto {
     @SerializedName("login")
     var login: String? = null
 
-    @SerializedName("password")
-    var password: String? = null
+    @SerializedName("token")
+    var token: String? = null
 
     @SerializedName("number")
     var number: String? = null

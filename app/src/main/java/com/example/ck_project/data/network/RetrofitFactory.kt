@@ -1,6 +1,7 @@
 package com.example.ck_project.data.network
 
 import com.example.ck_project.data.source.ProductApi
+import com.example.ck_project.data.source.UserApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,5 +13,9 @@ object RetrofitFactory {
 
     fun getProductApi(): ProductApi {
         return retrofit.create(ProductApi::class.java)
+    }
+
+    fun getUserApi(): UserApi {
+        return retrofit.create(UserApi::class.java)
     }
 }

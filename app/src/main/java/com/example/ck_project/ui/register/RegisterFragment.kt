@@ -23,7 +23,7 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity())[RegisterViewModel::class.java]
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
@@ -48,6 +48,11 @@ class RegisterFragment : Fragment() {
                 findNavController().navigate(R.id.action_navigation_register_to_navigation_profile)
             }
         }
+    }
+
+    fun isValidPhoneNumber(phoneNumber: String): Boolean {
+        val phonePattern = """^\+[1-9]\d{10}$""".toRegex()
+        return phonePattern.matches(phoneNumber)
     }
 
 }

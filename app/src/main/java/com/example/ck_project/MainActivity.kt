@@ -1,5 +1,7 @@
 package com.example.ck_project
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,13 +14,16 @@ import com.example.ck_project.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    var isAuthorized = false
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE)
 
         val navView: BottomNavigationView = binding.navView
 
@@ -30,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val dashboardMenuItem = navView.menu.findItem(R.id.navigation_dashboard)
 
         profileMenuItem.setOnMenuItemClickListener {
-            if (isAuthorized) {
+            if (sharedPreferences.getString("token", "")!!.isNotEmpty()) {
                 navController.navigate(R.id.navigation_profile)
             } else {
                 navController.navigate(R.id.navigation_login)
