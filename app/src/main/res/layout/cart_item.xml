@@ -15,31 +15,30 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:background="@drawable/item_background"
-                android:padding="16dp">
+                >
 
             <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_gravity="center"
-                    android:layout_height="100dp"
+                    android:layout_height="160dp"
                     android:id="@+id/item_image"
                     tools:src = "@tools:sample/avatars"/>
 
             <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="4dp"
                     android:background="#CC5622"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_title"
-                    android:layout_marginTop="8dp"
+                    android:layout_margin="8dp"
                     android:textSize="20sp"
                     android:textColor="@color/white"
                     tools:text = "Название"/>
 
             <TableRow android:layout_width="match_parent"
-                      android:layout_marginTop="12dp"
+                      android:layout_margin="8dp"
                       android:gravity="center"
                       android:layout_height="wrap_content">
 

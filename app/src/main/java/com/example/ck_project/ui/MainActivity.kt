@@ -1,14 +1,12 @@
-package com.example.ck_project
+package com.example.ck_project.ui
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.ck_project.R
 import com.example.ck_project.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

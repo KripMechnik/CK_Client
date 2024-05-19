@@ -14,5 +14,4 @@ class ProductDto {
 
     @SerializedName("price")
     var price: String? = null
-
 }

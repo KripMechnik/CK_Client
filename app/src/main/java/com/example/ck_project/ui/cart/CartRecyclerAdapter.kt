@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.ck_project.R
 import com.example.ck_project.databinding.CartItemBinding
 import com.example.ck_project.domain.entity.FullItemEntity
 
@@ -13,6 +15,11 @@ class CartRecyclerAdapter(val viewModel: CartViewModel, val data: MutableList<Mu
     inner class ViewHolder(val binding: CartItemBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(item: FullItemEntity, amount: Int){
+            Glide.with(binding.itemImage)
+                .load(item.image)
+                .error(R.mipmap.ic_launcher)
+                .centerCrop()
+                .into(binding.itemImage)
             binding.tvPrice.text = item.price
             binding.tvTitle.text = item.name
             binding.tvAmount.text = amount.toString()

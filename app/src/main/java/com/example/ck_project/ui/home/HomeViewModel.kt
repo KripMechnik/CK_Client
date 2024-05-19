@@ -10,25 +10,18 @@ import com.example.ck_project.domain.entity.FullItemEntity
 import com.example.ck_project.domain.entity.Status
 
 class HomeViewModel : ViewModel() {
-
     val mutableStateLiveData: MutableLiveData<State> = MutableLiveData()
-
     val stateLiveData: LiveData<State> = mutableStateLiveData
-
     val getAllProductsUseCase: GetAllProductsUseCase = GetAllProductsUseCase(ProductRepositoryImpl)
-    val getProductUseCase: GetProductUseCase = GetProductUseCase(ProductRepositoryImpl)
-
     init {
         updateList()
     }
-
     fun updateList() {
         mutableStateLiveData.value = State(null, null, true)
         getAllProductsUseCase.execute { status ->
             mutableStateLiveData.postValue(fromStatus(status))
         }
     }
-
     private fun fromStatus(status: Status<List<FullItemEntity>?>?): State {
         return State(
             if (status!!.errors != null) status.errors!!.localizedMessage else null,
@@ -36,12 +29,9 @@ class HomeViewModel : ViewModel() {
             false
         )
     }
-
-
     inner class State(
         val errorMessage: String?,
         val items: List<FullItemEntity>?,
         val isLoading: Boolean
     )
-
 }

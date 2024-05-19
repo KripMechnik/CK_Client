@@ -9,9 +9,7 @@ import java.util.Dictionary
 
 class CartViewModel : ViewModel() {
     val products = MutableLiveData<MutableMap<FullItemEntity, Int>>(mutableMapOf())
-
     val readyProducts = MutableLiveData<MutableList<MutableMap.MutableEntry<FullItemEntity, Int>>>()
-
     fun addItem(item: FullItemEntity){
         if (products.value!![item] == null){
             products.value!![item] = 1
@@ -20,7 +18,6 @@ class CartViewModel : ViewModel() {
         }
         readyProducts.value = toListData(products.value!!)
     }
-
     fun removeItem(item: FullItemEntity){
         if (products.value!![item] != null){
             if (products.value!![item] == 1){
@@ -31,7 +28,6 @@ class CartViewModel : ViewModel() {
         }
         readyProducts.value = toListData(products.value!!)
     }
-
     fun toListData(newData: MutableMap<FullItemEntity, Int>): MutableList<MutableMap.MutableEntry<FullItemEntity, Int>> {
         val entriesList = newData.entries.toMutableList()
         return entriesList

@@ -26,7 +26,6 @@
             <com.google.android.material.textview.MaterialTextView
                     android:layout_width="0dp"
                     android:layout_weight="10"
-                    android:layout_marginLeft="8dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -35,13 +34,6 @@
                     android:textColor="?attr/colorOnPrimary"
                     android:textSize="24sp"
                     android:id="@+id/tvProfile"/>
-
-            <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/shopping_cart"
-                    android:backgroundTint="#00FFFFFF"/>
 
         </LinearLayout>
 
